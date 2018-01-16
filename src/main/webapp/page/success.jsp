@@ -11,6 +11,8 @@
     <title>Page2</title>
 </head>
 <body>
-    Congr
+    Congratulations!
+    Username : ${username}
+    Password:  ${password}
 </body>
 </html>
