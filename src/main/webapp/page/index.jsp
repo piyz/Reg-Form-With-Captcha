@@ -11,6 +11,27 @@
     <title>Reg page</title>
 </head>
 <body>
-    Congr
+    <form method="post" action="page">
+        <table>
+            <tr>
+                <td>Username</td>
+                <td><input type="text" name="username" required></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="text" name="password" required></td>
+            </tr>
+            <tr>
+                <td>Captcha</td>
+                <td><img src="captcha-image"></td>
+                <td><input type="text" name="captcha"></td>
+                ${error}
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>

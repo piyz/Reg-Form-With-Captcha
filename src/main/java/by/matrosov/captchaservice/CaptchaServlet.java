@@ -1,4 +1,4 @@
-package by.matrosov.capcthaservice;
+package by.matrosov.captchaservice;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;

@@ -1,4 +1,4 @@
-package by.matrosov.capcthaservice;
+package by.matrosov.captchaservice;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,6 +16,15 @@ public class Controller extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        String captcha = req.getSession().getAttribute("captcha_security").toString();
+        String verifyCaptcha = req.getParameter("captcha");
+        if (captcha.equals(verifyCaptcha)){
+            req.setAttribute("username", req.getParameter("username"));
+            req.setAttribute("password", req.getParameter("password"));
+            req.getRequestDispatcher("page/success.jsp").forward(req,resp);
+        }else {
+            req.setAttribute("error", "Captcha Invalid");
+            req.getRequestDispatcher("page/index.jsp").forward(req,resp);
+        }
     }
 }
